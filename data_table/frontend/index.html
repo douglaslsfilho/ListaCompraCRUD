@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <h1><i class="fas fa-shopping-cart"></i> Lista de Compras</h1>
+      <button id="addItemBtn" class="btn-primary">
+        <i class="fas fa-plus"></i> Adicionar Item
+      </button>
+    </header>
+
+    <div class="filter-controls">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Pesquisar itens...">
+      </div>
+      <select id="categoryFilter" class="filter-select">
+        <option value="">Todas categorias</option>
+      </select>
+      <select id="statusFilter" class="filter-select">
+        <option value="all">Todos os itens</option>
+        <option value="bought">Comprados</option>
+        <option value="not-bought">A comprar</option>
+      </select>
+    </div>
+
+    <div class="table-responsive">
+      <table id="itemsTable">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th class="quantity-col">Quantidade</th>
+            <th class="category-col">Comprou?</th>
+            <th class="status-col">Categoria</th>
+            <th class="actions-col">Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5" class="summary">
+              Total: <span id="totalItems">0</span> itens | 
+              A comprar: <span id="itemsToBuy">0</span> | 
+              Comprados: <span id="itemsBought">0</span>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <div id="itemModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modalTitle">Adicionar Novo Item</h2>
+      
+      <form id="itemForm">
+        <input type="hidden" id="itemId">
+        
+        <div class="form-group">
+          <label for="nome">Nome do Item</label>
+          <input type="text" id="nome" required placeholder="Ex: Maçã, Arroz...">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" min="1" value="1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" required>
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="comprado">
+          <label for="comprado">Marcar como comprado</label>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn-secondary close-modal-btn">Cancelar</button>
+          <button type="submit" class="btn-primary" id="saveItemBtn">Salvar Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

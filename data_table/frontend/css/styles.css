@@ -1,0 +1,180 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f4f6;
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  thead {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  tbody tr:hover {
+    background-color: #f0f8ff;
+  }
+  
+  .bought {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .not-bought {
+    color: #999;
+  }
+  
+  /* Botões */
+  button {
+    border: none;
+    padding: 8px 12px;
+    margin-right: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-edit {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;}
+
+    .btn-delete {
+        background-color: #e74c3c;
+        color: white;
+        font-weight: bold;}
+
+
+  .edit-btn {
+    background-color: #3b82f6;
+    color: #3b82f6;
+  }
+  
+  .edit-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  .delete-btn {
+    background-color: #ef4444;
+    color:#ef4444;
+  }
+  
+  .delete-btn:hover {
+    background-color: #dc2626;
+  }
+  
+  #addItemBtn {
+    background-color: #10b981;
+    color: white;
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  #addItemBtn:hover {
+    background-color: #059669;
+  }
+  
+  /* Modal */
+  #itemModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #itemModal .modal-content {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 80px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Formulário */
+  form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+  
+  form input[type="checkbox"] {
+    margin-right: 6px;
+  }
+  
+  form .form-group {
+    margin-bottom: 16px;
+  }
+  
+  #saveItemBtn {
+    background-color: #10b981;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  #saveItemBtn:hover {
+    background-color: #059669;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    th, td {
+      font-size: 14px;
+    }
+  
+    .edit-btn, .delete-btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  
+    #addItemBtn {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+  
